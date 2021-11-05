@@ -1,0 +1,689 @@
+Day1
+What is Git?
+	Versioning tool
+
+
+======================================
+How can we get started?
+------------------------------
+How can i version my source code?
+==============================================
+
+Step 1 - Install git in Workstation(Laptop)
+	Windows -> EXE - git-scm.com
+				- git bash [IMP] -> Git + Basic Linux command in Windows
+				- gitk
+				- git gui
+				- cmd
+	GUI
+	- https://git-scm.com/downloads/guis
+	SourceTree by Atlassion	
+		
+	Linux
+		RHEL/Centos - sudo yum install git -y
+		Ubuntu - sudo apt-get install git -y
+
+Step 2 - Create a repo
+$ git init
+
+ 502  cd /e
+  503  pwd
+  504  ls
+  505  cd TrainX/
+  506  clear
+  507  ls
+  508  start .
+  509  mkdir repo1
+  510  clear
+  511  cd repo1/
+  512  pwd
+  513  clear
+  514  git init
+  515  history
+
+
+
+Step 3 - Create/Copy your files which you want to version.
+
+Step 4 - Add a files to GIT [ Send a file from WORKING Dir to Staging ]
+
+  523  git add file1.txt
+  524  git add file2.txt
+  525  git add --all
+
+[ ONE TIME ]
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@devopsschool.com"
+git config --list
+
+Step 5 - Commit a file to GIT [ Send a file from STAGING to Repo ]
+
+git commit -m"My First Commit"
+
+Step 6 - How to see a list of commits aka List of Version
+
+$ git log
+commit f5957c9900688e4f0910c10dc2c53d9ba9f5377e (HEAD -> master)
+Author: Rajesh Kumar <rajesh@devopsschool.com>
+Date:   Mon Nov 1 07:43:34 2021 +0530
+
+    My First Commit
+
+f5957c9900688e4f0910c10dc2c53d9ba9f5377e 
+- 40 CHAR UUID for identifying a commit
+- SHA1
+- Call it CHECKSUM
+- We call it commit id
+- Short form - f5957c9
+
+(HEAD -> master)
+- master - is default branch name
+- HEAD - TIP of the commit for each branch
+
+Who?	Rajesh Kumar <rajesh@devopsschool.com>
+What?	$ git show commit-id
+Why?	"My First Commit"
+Where?	$ git show commit-id
+When?	Mon Nov 1 07:43:34 2021 +0530
+
+Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/TrainX/repo1 (master)
+$ git show f5957c9900688e4f0910c10dc2c53d9ba9f5377e
+commit f5957c9900688e4f0910c10dc2c53d9ba9f5377e (HEAD -> master)
+Author: Rajesh Kumar <rajesh@devopsschool.com>
+Date:   Mon Nov 1 07:43:34 2021 +0530
+
+    My First Commit
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..0a22d21
+--- /dev/null
++++ b/file1.txt
+@@ -0,0 +1,2 @@
++This is Code line#1
++This is Code line#2
+\ No newline at end of file
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/file3.txt b/file3.txt
+new file mode 100644
+index 0000000..e69de29
+
+================================
+Git is not a file versioning tool. its a filesystem versioning tools
+Refer - git internal
+===============================
+Workflow in Git
+========================================================
+
+
+  538  clear
+  539  git status
+  540  ls
+  541  vi file2.txt
+  542  clear
+  543  git status
+  544  touch file4.txt
+  545  git status
+  546  ls
+  547  clear
+  548  ls
+  549  git status
+  550  git add file4.txt
+  551  git status
+  552  git add file2.txt
+  553  clear
+  554  git status
+  555  ls
+  556  git commit -m"adding 2nd"
+  557  git status
+  558  ls
+  559  clear
+  560  ls
+  561  git status
+  562  history
+
+======================================================================
+QA
+-----------------
+How to version Existing file code changes?
+Can i commit selective file?
+How to commit directory?
+How to rename a file?
+How to move a file from one location to another?
+How to delete a file?
+=========================
+
+
+541  vi file2.txt
+  542  clear
+  543  git status
+  544  touch file4.txt
+  545  git status
+  546  ls
+  547  clear
+  548  ls
+  549  git status
+  550  git add file4.txt
+  551  git status
+  552  git add file2.txt
+  553  clear
+  554  git status
+  555  ls
+  556  git commit -m"adding 2nd"
+  557  git status
+  558  ls
+  559  clear
+  560  ls
+  561  git status
+  562  history
+  563  clar
+  564  clear
+  565  ls
+  566  clear
+  567  vi file4.txt
+  568  git add --All
+  569  clear
+  570  git add --all
+  571  git commit -m"adding code changes"
+  572  git log
+  573  clear
+  574  git log --oneline
+  575  ls
+  576  touch file5.txt
+  577  touch file6.txt
+  578  touch file7.txt
+  579  clear
+  580  git status
+  581  git add --all
+  582  clear
+  583  git status
+  584  git commit -m"selective one" file5.txt
+  585  git status
+  586  clear
+  587  ls
+  588  git commit -m"all"
+  589  clear
+  590  git status
+  591  mkdir src
+  592  git status
+  593  touch src/test.txt
+  594  clear
+  595  git add src/
+  596  git status
+  597  git commit -m"adding dir"
+  598  clear
+  599  ls
+  600  git mv file1.txt file11.txt
+  601  git status
+  602  ls
+  603  git commit -m"rename"
+  604  clear
+  605  ls
+  606  git mv file2.txt src/file2.txt
+  607  git status
+  608  git commit -m"moving to src"
+  609  clear
+  610  ls
+  611  clear
+  612  ls
+  613  git rm file7.txt
+  614  ls
+  615  git status
+  616  git commit -m"delete a file"
+  617  clear
+  618  ls
+  619  git log --oneline
+  620  ls
+  621  git status
+  622  clear
+  623  git status
+  624  git log --oneline
+  625  git checkout 28de6f5
+  626  clear
+  627  ls
+  628  git checkout master
+  629  ls
+  630  history
+
+=========================================
+Dev LOVE GIT
+---------------
+Enterprise	
+	- GUI
+	- ISSUES
+	- WIKI	
+	- Ability to manage multiple CR
+	- RBAC
+	--------------
+	GIT HAS NOT SUCH FEATURE
+
+	PAY FOT IT
+	----------
+	github - gitlab - bitbucket - aws devops - azure devops - gerrit
+	------------------------------------------------------------------
+				SERVER
+	Hosting platform for remote repo
+
+	- GUI
+	- ISSUES
+	- WIKI	
+	- Ability to manage multiple CR
+	- RBAC
+	
+How to work with Remote aka Central repo aka github repo?
+---------------------------------------------------------
+Step 1 - Register and Validate a account at github.com
+Step 2 - Login and create a repo at github.com
+Step 3 - WORKSAPCE - git push url master 
+		HTTP - PAT [https://github.com/settings/tokens]
+		SSH - You need to upload ur PUBLIC key to github
+					id_rsa.pub ==> https://github.com/settings/ssh/new
+		$ ssh-keygen 
+		ON GITBASH - TO create new pvt n pub key
+			
+
+ 634  git log --oneline
+  635  git push https://github.com/devopsschool-demo-temporary/nov-1-2021.git master
+  636  cd ..
+  637  clear
+  638  ls
+  639  pwd
+  640  git clone git@github.com:devopsschool-demo-temporary/nov-1-2021.git
+  641  clear
+  642  ls
+  643  cd nov-1-2021/
+  644  clear
+  645  git log --oneline
+  646  touch anotherperson.txt
+  647  git add --all
+  648  git commit -m"ading another person"
+  649  clear
+  650  git log --oneline
+  651  git push origin master
+  652  cd ..
+  653  clear
+  654  ls
+  655  cd repo1/
+  656  ls
+  657  git remote add origin https://github.com/devopsschool-demo-temporary/nov-1-2021.git
+  658  git pull origin master
+
+
+
+
+
+Day2
+- Branching
+- Merging
+- Conflict resolution
+- Undoing
+- gitignore
+- pull request
+
+- Branching
+============================================
+What is branching?
+	- is a LINE of code for
+		Seprate 
+			DEV
+			BUG FIXING
+			Enhnacment
+		From Main line of Code.
+----------------------------------------
+Default branch 
+	- Master
+New Version of Git & github - Default branch - main
+
+What is Branching Strategy
+=========================
+	- Bug fixing
+	- Enhancement
+	- Team
+	- 2 Diff Geog*
+https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=azure-devops
+	
+
+Types of branches in Git?
+===================================
+Local Branch		- Read - Write
+Remote Branch		- Read Only
+Temporary Branch	- Ref only
+
+ 501  git --version
+  502  clear
+  503  git branch
+  504  ls
+  505  git branch -r
+  506  clear
+  507  git log --oneline
+  508  git checkout 28de6f5
+  509  git branch -a
+  510  git checkout master
+  511  git branch -a
+
+Why we have 
+- Local Branch		- Read - Write
+- Remote Branch		- Read Only
+
+PUSH === 
+Pull === Fetch + Merge
+
+git push origin master
+
+ 502  git brach -a
+  503  clear
+  504  git branch -a
+  505  git checkout remotes/origin/master
+  506  ls
+  507  clear
+  508  git checkout master
+  509  git fetch origin master
+  510  cleart
+  511  clear
+  512  ls
+  513  git checkout remotes/origin/master
+  514  ls
+  515  clear
+  516  ls
+  517  git checkout master
+  518  git branch -a
+  519  git merge remotes/origin/master
+  520  ls
+========================================================
+How to create a branches?
+=================================
+git branch dev
+git checkout -b qa
+git switch -c ops
+
+ 530  git branch dev
+  531  git branch -a
+  532  git checkout dev
+  533  git branch -a
+  534  clear
+  535  ls
+  536  touch dev1.txt;git add --all;git commit -m"adding dev1"
+  537  touch dev1.txt;git add --all;git commit -m"adding dev2"
+  538  touch dev2.txt;git add --all;git commit -m"adding dev2"
+  539  touch dev3.txt;git add --all;git commit -m"adding dev3"
+  540  clear
+  541  git log --oneline
+  542  git checkout master
+  543  clear
+  544  git log --oneline
+
+
+working with non-master branch from cloning
+
+  552  mkdir raju
+  553  git clone https://github.com/devopsschool-demo-temporary/nov-1-2021.git raju
+  554  ls
+  555  cd raju/
+  556  clear
+  557  git branch -a
+  558  git checkout dev
+  559  git branch -a
+============================================================
+HEAP is TIp of the Current branch which you have checked out.
+=========================================================
+Fast Forward
+
+  572  git log --oneline
+  573  git checkout -b qa
+  574  clear
+  575  git log --oneline
+  576  touch qa1.txt;git add --all;git commit -m"adding qa1"
+  577  touch qa2.txt;git add --all;git commit -m"adding qa2"
+  578  clear
+  579  touch qa3.txt;git add --all;git commit -m"adding qa3"
+  580  git log --oneline
+  581  git checkout master
+  582  git log --oneline
+  583  clear
+  584  git merge qa
+  585  git log --oneline
+
+
+
+Recursive
+
+ 589  git log --oneline
+  590  git checkout -b recurse
+  591  git log --oneline
+  592  clear
+  593  touch recurse1.txt;git add --all;git commit -m"adding recuse1"
+  594  touch recurse2.txt;git add --all;git commit -m"adding recuse2"
+  595  git checkout master
+  596  git log --oneline
+  597  touch master1.txt;git add --all;git commit -m"adding master1"
+  598  touch master2.txt;git add --all;git commit -m"adding master2"
+  599  git log --oneline
+  600  git checkout recurse
+  601  touch recurse3.txt;git add --all;git commit -m"adding recuse3"
+  602  touch recurse4.txt;git add --all;git commit -m"adding recuse4"
+  603  git log --oneline
+  604  git checkout master
+  605  git log --oneline
+  606  touch master3.txt;git add --all;git commit -m"adding master3"
+  607  clear
+  608  git diff recurse
+  609  ls
+  610  clear
+  611  ls
+  612  git checkout recurse
+  613  ls
+  614  git checkout master
+  615  clear
+  616  git merge recurse
+  617  ls
+  618  git log --oneline
+  619  git log
+  620  git log --oneline
+
+
+
+Cherry-Picking
+=======================================
+
+  624  git checkout recurse
+  625  touch cherry1.txt;git add --all;git commit -m"adding cherry1"
+  626  touch cherry2.txt;git add --all;git commit -m"adding cherry2"
+  627  touch cherry3.txt;git add --all;git commit -m"adding cherry3"
+  628  touch cherry4.txt;git add --all;git commit -m"adding cherry4"
+  629  touch cherry5.txt;git add --all;git commit -m"adding cherry5"
+  630  clear
+  631  ls
+  632  git log --oneline
+  633  git checkout master
+  634  git cherry-pick 5719792
+  635  ls
+  636  git log --oneline
+  637  clear
+  638  git cherry-pick --help
+
+
+===================
+- Conflict resolution
+----------------------
+  643  git merge recurse
+  644  clear
+  645  ls
+  646  vi recurse1.txt
+  647  git add --all;git commit -m"done"
+  648  more recurse1.txt
+  649  cat recurse1.txt
+  650  git checkout recurse
+  651  clear
+  652  vi recurse1.txt
+  653  git add --all;git commit -m"done"
+  654  git checkout master
+  655  clear
+  656  ls
+  657  git merge recurse
+  658  vi recurse1.txt
+  659  git add --all;git commit -m"done"
+  660  git merge recurse
+
+
+
+
+- Undoing
+-------------------------------------------
+WORKING DIR ---> STAGING --> Repo
+
+Repo --> STAGING --> Working dir
+
+  663  git status
+  664  clear
+  665  touch clean.txr
+  666  git status
+  667  git clean -f -d
+  668  git status
+  669  touch reset.txr
+  670  clear
+  671  git status
+  672  git add reset.txr
+  673  git status
+  674  git reset reset.txr
+  675  git status
+  676  clear
+  677  touch good.txt;git add --all;git commit -m"ading Good"
+  678  touch bad.txt;git add --all;git commit -m"ading bad"
+  679  git log --oneline
+  680  clear
+  681  ls
+  682  git log --oneline
+  683  clear
+  684  git log --oneline
+  685  git revert 55d78f9
+  686  git log --oneline
+  687  git log --oneline -n 5
+  688  clear
+  689  git log --oneline -n 5
+  690  git diff f761503 55d78f9
+  691  git diff f7615033f8fe19
+  692  git diff f761503 3f8fe19
+
+
+
+- .gitignore
+
+- pull request
+======================
+
+
+
+
+
+Day3
+Azure DevOps
+======================
+
+What are the Objective of Org?
+---------------------------------
+Improve of Quality of Software
+Reduce the Soft Dev Cost and Running Cost
+Imm Release
+
+
+How can i do that?
+
+		What we have???			WHAT WE SHOULD HAVE?
+=================================================================
+
+Model		Waterfall/Agile			DEVOPS --> DevSecOps
+
+Architecture	Monolitic/SOA			Microservcies
+
+Platform	Physical/Vms			Container
+
+Mindset		I would do Only 1 work		ALL WORK
+
+Team Anatomy	Dev-QA-IT-DB-Ops		ONE
+
+Culture		DIFFERENCES			ONE
+
+PROCESS		OLD In-Effective		Effective
+
+Practices	OLD In-Effective		Effective	
+
+Tools		Fear of Technology		LATEST TECH
+
+
+
+ALL WORK ==
+======================================
+Are you doing CODING for the product?
+Are you doing CODING for a testing of the product?
+Are you doing CODING for a ops/infra of the product?
+==================================================
+			ONE PERSON
+			=========
+			DEVOPS
+
+
+How to perform DevOps?
+======================
+
+CI -> CD -> CD
+------------------------
+https://miro.medium.com/max/1400/0*kLIvYAJJd3ZQZbw1.jpg
+
+What is CI?
+----------------------	
+	Allow Failure
+
+Auto Build + Auto Test
+======================
+     Imm feedback
+
+PLAN => CODE => Analysis => Build => UT ==> Pack => Archive => Dep2QA ==> AT => CC
+===================================================================================
+JIRA => GIT => SonarQube => Maven => Junit => War => Artifactory => Ansible => Selenium => Jacoco
+================================================================================================
+ARCH => DEV => DEV      => BR  ==>  DEV    ==> BR  => BR ========> QA =======> QA ====> Mgr
+===============================================================================================
+					ONE PLATFORM
+				-------------------------------------
+					Jenkins
+					Azure DevOps
+------------------------------------------------------------------------------------------
+BOARD -> REPOS -> ====================PIPELINE============ARTIFACT=========== -> TESTPLAN 
+
+CD = Delivery?
+----------------------------------
+	A POINT
+	- Where you have a ready package for the production.
+
+CD = Deployment
+https://blog.crisp.se/wp-content/uploads/2013/02/continuous-delivery-deployment-sm.jpg
+
+Google has introduced => SRE
+=============================
+https://www.devopsschool.com/path/
+
+===============================================
+Step 1 - Register and Login at https://dev.azure.com/
+
+Step 2 - Create an ORG
+
+Step 3 - Create a proj
+
+Step 4 - Create a repo
+
+Step 5 - WORK WITH REPo
+			1 create git repo
+			1 import git repo
+			1 tfvs repo
+==============================================================
+
+TAG
+
+ 522  git tag --list
+  523  git tag release1.0
+  524  git tag --list
+  525  git push origin release1.0
+  526  git checkout release1.0
+  527  git checkout main
