@@ -687,3 +687,140 @@ TAG
   525  git push origin release1.0
   526  git checkout release1.0
   527  git checkout main
+  
+  
+  
+  
+  
+  Day 4
+  Linux - 10
+- Rajesh - 3.108.54.115
+User Name - centos
+Key - 
+rajesh-mumbai.pem - FOR SSH	[ssh -i rajesh-mumbai.pem centos@3.108.54.115]
+rajesh-mumbai.ppk - FOR Putty
+
+
+authentication type
+=======================================
+https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops
+
+https://vstsagentpackage.azureedge.net/agent/2.194.0/vsts-agent-linux-x64-2.194.0.tar.gz
+https://dev.azure.com/professnow
+ProfessnowPool
+Windows - 10
+
+4  cd
+    5  pwd
+    6  mkdir myagent && cd myagent
+    7  wget https://vstsagentpackage.azureedge.net/agent/2.194.0/vsts-agent-linux-x64-2.194.0.tar.gz
+   10  tar -zxvf vsts-agent-linux-x64-2.194.0.tar.gz
+   21  sudo yum update
+   15  sudo ./bin/installdependencies.sh
+   13  ./config.sh
+   14  ./run.sh
+
+
+
+
+Windows
+-=-------------
+Administrator
+
+13.233.201.31	Qw53EX4Flxu$;j*y-gdZV(d.*XYeTzL?
+
+https://vstsagentpackage.azureedge.net/agent/2.194.0/vsts-agent-win-x64-2.194.0.zip
+
+
+PS C:\> mkdir agent ; cd agent
+PS C:\agent> Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$HOME\Downloads\vsts-agent-win-x64-2.194.0.zip", "$PWD")
+
+PS C:\agent> .\config.cmd
+PS C:\agent> .\run.cmd
+
+
+Azure-DevOps-Batch1
+
+========================
+Linux
+==================
+centos
+=============================
+
+
+13.233.91.54			Sinu Karukayil Alex
+13.233.8.37			Ezwan
+52.66.235.143			Ooi Tze Chun
+13.232.106.173			Eko Suwono
+65.2.4.130			ahmad rifai
+15.207.109.51			Mohamed Rizal Abdul Azis
+13.233.150.111			Joe Faeezri bin Johari
+35.154.81.128	
+13.127.23.179	
+13.235.87.80	
+
+WINDOWS
+=================
+15.206.88.245	WhI4xE?yaXwEQ%aBvyWG%v9R4N)6bS;%		Sinu Karukayil Alex
+13.233.199.204	!s!W=vj*zb@STAXo44pjy$)KY!.IWMXt		Ezwan
+13.233.147.180	vM7FcSXxQChtAKU5G4%yJUQY(sm3*=w2		Ooi Tze Chun
+13.233.158.71	yz7(d7;xUN;TFJrYP8--)f-vyPWE&57C		Eko Suwono
+13.233.26.67	$rI&cUj=!OpWf=qqPK!L-pyr98j2d975		ahmad rifai
+13.233.102.164	*%7Ygjj?&Ubc$bUE5SG$uNB2GcG3Rg;!		Mohamed Rizal Abdul Azis
+3.110.49.30	e$2TWt&3;.uoozuqU3*W3!yjPPzXhg$z		Joe Faeezri bin Johari
+3.108.52.207	W.9n-!-R4Ezo*dr&qQ6N7;d2V8hr3nh3
+13.233.151.192	=qQPuAN;wP!z6EfdsoH?DQ8S%u258Szb
+65.0.21.43	iz*uA$p!?4.*qcm8EktHX-GXD@n@uz.h
+
+===================================
+
+
+vnet - infra ----> INFRA tool [ Terraform | Ansible ]
+----------------------------
+	Azure DevOps
+==========================
+Pipeline
+	- Build
+		Artifact(Package)
+	- Release
+		Deploy to ENV | Deployment Tar
+
+=======================
+JAVA - https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+Build -> UT -> Pack ->
+-----------------------------
+Builder - Maven
+
+Build --> Goal (compile)
+Test --> Goal (test)
+Package --> Goal (package)
+
+=======================
+GIT - Where you have SCRIPT for creating a vnet
+EMPTY - 
+	Call cmd to run that script
+
+
+Maven
+===============
+  29  sudo yum install unzip -y
+   30  clear
+   31  ls
+   32  wget https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.zip
+   33  clear
+   34  ls
+   35  unzip apache-maven-3.8.3-bin.zip
+   36  clear
+   37  ls
+   38  pwd
+   39  cd apache-maven-3.8.3
+
+
+JAVA_HOME
+======================
+sudo yum install java-11-openjdk-devel -y
+sudo yum install git -y
+
+Git upgrade
+------------------------------
+https://devopsschool.com/tutorial/git/git-upgrade-process.html
