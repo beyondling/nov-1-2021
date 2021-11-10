@@ -64,8 +64,10 @@ Step 1 - Install Terraform
 ------------------------------------------
 - https://www.terraform.io/downloads.html
 - Extract it
-- Set a installer in the path
+- Set a installer in the path	| set PATH=%PATH%;C:\tools\hashicorp\terraform
 - $ terraform version
+
+
 
 Step 2 - Install Providers
 https://www.terraform.io/docs/language/providers/index.html
@@ -84,13 +86,13 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "=2.46.0"
     }
-    azuredevops = {
+	github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
+	azuredevops = {
       source = "microsoft/azuredevops"
       version = ">=0.1.0"
-    }
-    github = {
-      source = "integrations/github"
-      version = "4.18.0"
     }
   }
 }
@@ -101,12 +103,17 @@ provider "azurerm" {
 }
 
 provider "azuredevops" {
-  features {}
+	org_service_url = "https://dev.azure.com/holidaylandmark"
+	personal_access_token = ""
 }
 
+
+# Configure the GitHub Provider
 provider "github" {
-  features {}
+	token = ""
 }
+
+
 ---------------------------------
 
 Step 3  - Write a Code
@@ -126,16 +133,25 @@ Step 3  - Write a Code
 	----------------------.tf--------------------------
 	Resources
 		Resource1
+			Arguments1
+			Arguments2
+			Arguments3
 			Attribute1
 			Attribute2
 			Attribute3
 			Attribute4
 		Resource2
+			Arguments1
+			Arguments2
+			Arguments3
 			Attribute1
 			Attribute2
 			Attribute3
 			Attribute4
 		Resource3
+			Arguments1
+			Arguments2
+			Arguments3
 			Attribute1
 			Attribute2
 			Attribute3
@@ -280,3 +296,4 @@ Assignment #1
 - Write a tf script to create a repo
 - work with PLAN - Apply - Destroy
 - Understand more state file.
+
