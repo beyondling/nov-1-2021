@@ -1,3 +1,5 @@
+Day7
+
 What is Terraform?
 ========================================
 	Coding for Infra
@@ -297,3 +299,30 @@ Assignment #1
 - work with PLAN - Apply - Destroy
 - Understand more state file.
 
+
+
+
+
+
+Day8
+
+.tf
+-----------
+providers
+
+resoureces
+	arguments
+	attributes
+	meta
+	provioioners
+
+
+==============================
+How to secure Secrets?
+- It should  not be .tf as part of the project.
+- It can be part of env var
+- It can be part of some-hiddens out of project
+- Hasicorp vault
+
+terraform Basic Flow - https://www.devopsschool.com/blog/terraform-basics-workflow-loop-explained/
+terraform Advance flow - https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
