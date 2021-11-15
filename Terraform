@@ -385,3 +385,6 @@ https://www.devopsschool.com/blog/terraform-workspace-explained/
   517  terraform plan
   518  clear
   519  terraform workspace
+
+
+https://www.terraform.io/docs/language/functions/index.html#
