@@ -354,3 +354,34 @@ Step 1 - Create a Volume - azurerm_managed_disk
 Step 2 - Attach a disk to VMS - azurerm_virtual_machine_data_disk_attachment
 Step 3 - Use remote-exec provisoners
 Run following commands - https://docs.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal
+
+
+
+
+
+
+
+
+Day10
+https://www.devopsschool.com/blog/terraform-workspace-explained/
+
+ 500  terraform workspace
+  501  terraform workspace list
+  502  terraform workspace select default
+  503  clear
+  504  terraform workspace list
+  505  terraform workspace new qa
+  506  cls
+  507  clear
+  508  terraform workspace list
+  509  terraform plan
+  510  terraform workspace default
+  511  terraform workspace select default
+  512  terraform plan
+  513  terraform workspace select prod
+  514  terraform plan
+  515  terraform workspace select qa
+  516  terraform apply
+  517  terraform plan
+  518  clear
+  519  terraform workspace
